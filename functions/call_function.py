@@ -33,8 +33,8 @@ def call_function(function_call_part, verbose=False):
             role="tool",
             parts=[
                 types.Part.from_function_response(
-                    name=function_name,
-                    response={"error": f"Unknown function: {function_name}"},
+                    name=function_call_part.name,
+                    response={"error": f"Unknown function: {function_call_part.name}"},
                 )
             ],
         )
